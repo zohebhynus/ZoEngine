@@ -11,12 +11,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\ZoEngine\Log.h" />
     <ClInclude Include="Source\ZoEngine.h" />
     <ClInclude Include="Source\ZoEngine\Application.h" />
     <ClInclude Include="Source\ZoEngine\Core.h" />
     <ClInclude Include="Source\ZoEngine\EntryPoint.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\ZoEngine\Log.cpp" />
     <ClCompile Include="Source\ZoEngine\Application.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -55,12 +57,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\$(ProjectName)\</OutDir>
-    <IntDir>$(SolutionDir)bin int\$(Configuration)-$(Platform)\$(ProjectName)\</IntDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\$(ProjectName)\</OutDir>
-    <IntDir>$(SolutionDir)bin int\$(Configuration)-$(Platform)\$(ProjectName)\</IntDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -68,6 +70,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>ZO_PLATFORM_WINDOWS;ZO_BUILD_DLL;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)ZoEngine\Vendor\spdlog\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -82,6 +85,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>ZO_PLATFORM_WINDOWS;ZO_BUILD_DLL;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)ZoEngine\Vendor\spdlog\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

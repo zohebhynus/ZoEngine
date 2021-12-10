@@ -27,9 +27,15 @@
     <ClInclude Include="Source\ZoEngine\EntryPoint.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Source\ZoEngine\Log.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\ZoEngine\Application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ZoEngine\Log.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
