@@ -33,10 +33,10 @@ namespace ZoEngine {
 #define ZO_CORE_CRITICAL(...)	::ZoEngine::Log::GetCoreLogger()->critical(__VA_ARGS__)
 
 // Client Logger Macros
-#define ZO_TRACE(...)	::ZoEngine::Log::GetClientLogger()->trace(__VA_ARGS__)
-#define ZO_INFO(...)		::ZoEngine::Log::GetClientLogger()->info(__VA_ARGS__)
-#define ZO_WARN(...)		::ZoEngine::Log::GetClientLogger()->warn(__VA_ARGS__)
-#define ZO_ERROR(...)	::ZoEngine::Log::GetClientLogger()->error(__VA_ARGS__)
-#define ZO_CRITICAL(...)	::ZoEngine::Log::GetClientLogger()->critical(__VA_ARGS__)
+#define ZO_TRACE(...)			::ZoEngine::Log::GetClientLogger()->trace(__VA_ARGS__)
+#define ZO_INFO(...)			::ZoEngine::Log::GetClientLogger()->info(__VA_ARGS__)
+#define ZO_WARN(...)			::ZoEngine::Log::GetClientLogger()->warn(__VA_ARGS__)
+#define ZO_ERROR(...)			::ZoEngine::Log::GetClientLogger()->error(__VA_ARGS__)
+#define ZO_CRITICAL(...)		::ZoEngine::Log::GetClientLogger()->critical(__VA_ARGS__)
 
 
