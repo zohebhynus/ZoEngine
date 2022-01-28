@@ -9,3 +9,6 @@
 #else
 	#error ZoEngine only supports Windows right now!
 #endif // ZO_PLATFORM_WINDOWS
+
+//For bit field
+#define BIT(x) (1 << x)

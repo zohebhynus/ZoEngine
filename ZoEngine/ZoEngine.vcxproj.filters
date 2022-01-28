@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="Events">
+      <UniqueIdentifier>{3A8963B1-262B-8E87-0FE6-A1DBFB2615D8}</UniqueIdentifier>
+    </Filter>
     <Filter Include="ZoEngine">
       <UniqueIdentifier>{E43B4D94-D008-A89F-F921-9647E54DDD2D}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Events\Event.h">
+      <Filter>Events</Filter>
+    </ClInclude>
     <ClInclude Include="Source\ZoEngine.h" />
     <ClInclude Include="Source\ZoEngine\Application.h">
       <Filter>ZoEngine</Filter>
@@ -19,6 +25,9 @@
     <ClInclude Include="Source\ZoEngine\Log.h">
       <Filter>ZoEngine</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Events\KeyEvent.h" />
+    <ClInclude Include="Source\Events\MouseEvent.h" />
+    <ClInclude Include="Source\Events\ApplicationEvent.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\ZoEngine\Application.cpp">
