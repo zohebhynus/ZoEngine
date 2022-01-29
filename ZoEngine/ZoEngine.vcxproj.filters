@@ -9,7 +9,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Events\ApplicationEvent.h">
+      <Filter>Events</Filter>
+    </ClInclude>
     <ClInclude Include="Source\Events\Event.h">
+      <Filter>Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Events\KeyEvent.h">
+      <Filter>Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Events\MouseEvent.h">
       <Filter>Events</Filter>
     </ClInclude>
     <ClInclude Include="Source\ZoEngine.h" />
@@ -25,9 +34,7 @@
     <ClInclude Include="Source\ZoEngine\Log.h">
       <Filter>ZoEngine</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Events\KeyEvent.h" />
-    <ClInclude Include="Source\Events\MouseEvent.h" />
-    <ClInclude Include="Source\Events\ApplicationEvent.h" />
+    <ClInclude Include="Source\pch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\ZoEngine\Application.cpp">
@@ -36,5 +43,6 @@
     <ClCompile Include="Source\ZoEngine\Log.cpp">
       <Filter>ZoEngine</Filter>
     </ClCompile>
+    <ClCompile Include="Source\pch.cpp" />
   </ItemGroup>
 </Project>

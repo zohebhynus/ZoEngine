@@ -1,9 +1,6 @@
 #pragma once
-
+#include "pch.h"
 #include "ZoEngine/Core.h"
-
-#include <string>
-#include <functional>
 
 namespace ZoEngine
 {

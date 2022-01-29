@@ -17,6 +17,9 @@ project "ZoEngine"
 	
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+	pchheader "pch.h"
+	pchsource "ZoEngine/Source/pch.cpp"
 	
 	files
 	{
