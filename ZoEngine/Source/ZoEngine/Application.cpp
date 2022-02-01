@@ -4,12 +4,13 @@
 
 #include "Events/ApplicationEvent.h"
 #include "ZoEngine/Log.h"
+#include "GLFW/glfw3.h"
 
 namespace ZoEngine
 {
 	Application::Application()
 	{
-
+		m_Window = std::unique_ptr<Window>(Window::Create());
 	}
 
 	Application::~Application()
@@ -19,21 +20,13 @@ namespace ZoEngine
 
 	void Application::Run()
 	{
-		WindowResizeEvent e(1280, 720);
 
-		if (e.IsInCategory(EventCategoryApplication))
+		while (m_IsRunning)
 		{
-			ZO_TRACE(e);
-		}
+			glClearColor(0.8, 0.3, 0.2, 1.0);
+			glClear(GL_COLOR_BUFFER_BIT);
 
-		if (e.IsInCategory(EventCategoryKeyboard))
-		{
-			ZO_TRACE(e);
-		}
-
-		while (true)
-		{
-
+			m_Window->OnUpdate();
 		}
 	}
 }

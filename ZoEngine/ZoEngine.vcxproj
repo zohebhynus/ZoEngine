@@ -80,7 +80,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>ZO_PLATFORM_WINDOWS;ZO_BUILD_DLL;ZO_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Source;Vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Source;Vendor\spdlog\include;Vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -89,6 +89,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>..\bin\Debug-windows-x86_64\ZoEngine\ZoEngine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -101,7 +102,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>ZO_PLATFORM_WINDOWS;ZO_BUILD_DLL;ZO_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Source;Vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Source;Vendor\spdlog\include;Vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -114,6 +115,7 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>..\bin\Release-windows-x86_64\ZoEngine\ZoEngine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -126,7 +128,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>ZO_PLATFORM_WINDOWS;ZO_BUILD_DLL;ZO_FINALRELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Source;Vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Source;Vendor\spdlog\include;Vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -139,6 +141,7 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>..\bin\FinalRelease-windows-x86_64\ZoEngine\ZoEngine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -146,23 +149,31 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Source\Events\ApplicationEvent.h" />
-    <ClInclude Include="Source\Events\Event.h" />
-    <ClInclude Include="Source\Events\KeyEvent.h" />
-    <ClInclude Include="Source\Events\MouseEvent.h" />
     <ClInclude Include="Source\ZoEngine.h" />
     <ClInclude Include="Source\ZoEngine\Application.h" />
     <ClInclude Include="Source\ZoEngine\Core.h" />
     <ClInclude Include="Source\ZoEngine\EntryPoint.h" />
+    <ClInclude Include="Source\ZoEngine\Events\ApplicationEvent.h" />
+    <ClInclude Include="Source\ZoEngine\Events\Event.h" />
+    <ClInclude Include="Source\ZoEngine\Events\KeyEvent.h" />
+    <ClInclude Include="Source\ZoEngine\Events\MouseEvent.h" />
     <ClInclude Include="Source\ZoEngine\Log.h" />
+    <ClInclude Include="Source\ZoEngine\Platforms\WindowsWindow.h" />
+    <ClInclude Include="Source\ZoEngine\Window.h" />
     <ClInclude Include="Source\pch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\ZoEngine\Application.cpp" />
     <ClCompile Include="Source\ZoEngine\Log.cpp" />
+    <ClCompile Include="Source\ZoEngine\Platforms\WindowsWindow.cpp" />
     <ClCompile Include="Source\pch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Vendor\GLFW\GLFW.vcxproj">
+      <Project>{154B857C-0182-860D-AA6E-6C109684020F}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

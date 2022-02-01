@@ -10,6 +10,12 @@ workspace "ZoEngine"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+--Includes relative to root
+IncludeDir = {}
+IncludeDir["GLFW"] = "ZoEngine/Vendor/GLFW/include"
+
+include "ZoEngine/Vendor/GLFW"
+
 project "ZoEngine"
 	location "ZoEngine"
 	kind "SharedLib"
@@ -30,7 +36,14 @@ project "ZoEngine"
 	includedirs
 	{
 		"%{prj.name}/Source",
-		"%{prj.name}/Vendor/spdlog/include"
+		"%{prj.name}/Vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 	
 	filter "system:windows"

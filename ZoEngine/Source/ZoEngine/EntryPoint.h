@@ -8,7 +8,6 @@ void main(int argc, char** argv)
 {
 	ZoEngine::Log::Init();
 	ZO_CORE_WARN("Log Initialized");
-	ZO_INFO("Client says Hello");
 
 	auto app = ZoEngine::CreateApplication();
 	app->Run();
