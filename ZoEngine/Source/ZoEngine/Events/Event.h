@@ -54,7 +54,7 @@ namespace ZoEngine
 		bool m_Handled = false;
 	};
 
-	//Evenet Dispatcher Class
+	//Event Dispatcher Class
 	class EventDispatcher
 	{
 		template<typename T>

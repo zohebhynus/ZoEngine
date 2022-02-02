@@ -11,6 +11,8 @@ namespace ZoEngine
 	Application::Application()
 	{
 		m_Window = std::unique_ptr<Window>(Window::Create());
+		//TODO : Make into Macro
+		m_Window->SetEventCallback(std::bind(&Application::OnEvent, this, std::placeholders::_1));
 	}
 
 	Application::~Application()
@@ -28,5 +30,20 @@ namespace ZoEngine
 
 			m_Window->OnUpdate();
 		}
+	}
+	void Application::OnEvent(Event& e)
+	{
+		EventDispatcher dispatcher(e);
+
+		dispatcher.Dispatch<WindowClosesEvent>(std::bind(&Application::OnWindowClose, this, std::placeholders::_1));
+
+		ZO_CORE_TRACE("{0}", e);
+	}
+
+	bool Application::OnWindowClose(WindowClosesEvent& event)
+	{
+		m_IsRunning = false;
+
+		return true;
 	}
 }

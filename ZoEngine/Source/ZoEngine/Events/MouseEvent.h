@@ -19,7 +19,7 @@ namespace ZoEngine
 		{
 			std::stringstream ss;
 			ss << "Mouse Move Event : " << m_MouseX << ", " << m_MouseY;
-			ss.str();
+			return ss.str();
 		}
 
 		EVENT_CLASS_TYPE(MouseMoved)
@@ -45,7 +45,7 @@ namespace ZoEngine
 		{
 			std::stringstream ss;
 			ss << "Mouse Scrolled Event : " << m_XOffset << ", " << m_YOffset;
-			ss.str();
+			return ss.str();
 		}
 
 		EVENT_CLASS_TYPE(MouseScrolled)
@@ -84,7 +84,7 @@ namespace ZoEngine
 		{
 			std::stringstream ss;
 			ss << "Mouse Buttom Pressed : " << m_Button;
-			ss.str();
+			return ss.str();
 		}
 
 		EVENT_CLASS_TYPE(MouseButtonPressed)
@@ -102,7 +102,7 @@ namespace ZoEngine
 		{
 			std::stringstream ss;
 			ss << "Mouse Buttom Released : " << m_Button;
-			ss.str();
+			return ss.str();
 		}
 
 		EVENT_CLASS_TYPE(MouseButtonReleased)
