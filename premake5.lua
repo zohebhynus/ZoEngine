@@ -13,8 +13,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 --Includes relative to root
 IncludeDir = {}
 IncludeDir["GLFW"] = "ZoEngine/Vendor/GLFW/include"
+IncludeDir["Glad"] = "ZoEngine/Vendor/Glad/include"
 
 include "ZoEngine/Vendor/GLFW"
+include "ZoEngine/Vendor/GLAD"
 
 project "ZoEngine"
 	location "ZoEngine"
@@ -37,12 +39,14 @@ project "ZoEngine"
 	{
 		"%{prj.name}/Source",
 		"%{prj.name}/Vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 
 	links
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 	
@@ -54,7 +58,8 @@ project "ZoEngine"
 		defines
 		{
 			"ZO_PLATFORM_WINDOWS",
-			"ZO_BUILD_DLL"
+			"ZO_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 		
 		postbuildcommands
@@ -64,14 +69,17 @@ project "ZoEngine"
 	
 	filter "configurations:Debug"
 		defines "ZO_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 		
 	filter "configurations:Release"
 		defines "ZO_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 		
 	filter "configurations:FinalRelease"
 		defines "ZO_FINALRELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 
@@ -114,14 +122,17 @@ project "Sandbox"
 	
 	filter "configurations:Debug"
 		defines "ZO_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 		
 	filter "configurations:Release"
 		defines "ZO_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 		
 	filter "configurations:FinalRelease"
 		defines "ZO_FINALRELEASE"
+		buildoptions "/MD"
 		optimize "On"
 	
 	

@@ -34,6 +34,12 @@
     <ClInclude Include="Source\ZoEngine\Events\MouseEvent.h">
       <Filter>ZoEngine\Events</Filter>
     </ClInclude>
+    <ClInclude Include="Source\ZoEngine\Layer.h">
+      <Filter>ZoEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ZoEngine\LayerStack.h">
+      <Filter>ZoEngine</Filter>
+    </ClInclude>
     <ClInclude Include="Source\ZoEngine\Log.h">
       <Filter>ZoEngine</Filter>
     </ClInclude>
@@ -47,6 +53,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\ZoEngine\Application.cpp">
+      <Filter>ZoEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ZoEngine\Layer.cpp">
+      <Filter>ZoEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ZoEngine\LayerStack.cpp">
       <Filter>ZoEngine</Filter>
     </ClCompile>
     <ClCompile Include="Source\ZoEngine\Log.cpp">

@@ -5,6 +5,8 @@
 #include "ZoEngine/Events/KeyEvent.h"
 #include "ZoEngine/Events/MouseEvent.h"
 
+#include "glad/glad.h"
+
 namespace ZoEngine
 {
 	static bool s_GLFWInitialized = false;
@@ -34,14 +36,19 @@ namespace ZoEngine
 
 		if (!s_GLFWInitialized)
 		{
-			int success = glfwInit();
-			ZO_CORE_ASSERT(success, "GLFW Failed to Initialize.");
+			int result = glfwInit();
+			ZO_CORE_ASSERT(result, "GLFW Failed to Initialize.");
 			glfwSetErrorCallback(GLFWErrorCallback);
 			s_GLFWInitialized = true;
 		}
 
 		m_Window = glfwCreateWindow(m_WindowData.Width, m_WindowData.Height, m_WindowData.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
+
+		//Glad Initialization
+		int result = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		ZO_CORE_ASSERT(result, "Glad Failed to Initialize.")
+
 		glfwSetWindowUserPointer(m_Window, &m_WindowData);
 		SetVSync(true);
 

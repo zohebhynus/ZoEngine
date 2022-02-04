@@ -4,7 +4,7 @@
 
 #include "Events/ApplicationEvent.h"
 #include "ZoEngine/Log.h"
-#include "GLFW/glfw3.h"
+#include "glad/glad.h"
 
 namespace ZoEngine
 {
@@ -28,6 +28,11 @@ namespace ZoEngine
 			glClearColor(0.8, 0.3, 0.2, 1.0);
 			glClear(GL_COLOR_BUFFER_BIT);
 
+			for (Layer* layer : m_LayerStack)
+			{
+				layer->OnUpdate();
+			}
+
 			m_Window->OnUpdate();
 		}
 	}
@@ -36,8 +41,25 @@ namespace ZoEngine
 		EventDispatcher dispatcher(e);
 
 		dispatcher.Dispatch<WindowClosesEvent>(std::bind(&Application::OnWindowClose, this, std::placeholders::_1));
+		
+		for (auto it = m_LayerStack.end(); it != m_LayerStack.begin();)
+		{
+			(*--it)->OnEvent(e);
+			if (e.Handled)
+			{
+				break;
+			}
+		}
+	}
 
-		ZO_CORE_TRACE("{0}", e);
+	void Application::PushLayer(Layer* layer)
+	{
+		m_LayerStack.PushLayer(layer);
+	}
+
+	void Application::PopLayer(Layer* layer)
+	{
+		m_LayerStack.PopLayer(layer);
 	}
 
 	bool Application::OnWindowClose(WindowClosesEvent& event)
