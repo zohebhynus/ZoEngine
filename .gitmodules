@@ -4,3 +4,6 @@
 [submodule "ZoEngine/Vendor/GLFW"]
 	path = ZoEngine/Vendor/GLFW
 	url = https://github.com/zohebhynus/glfw
+[submodule "ZoEngine/Vendor/ImGui"]
+	path = ZoEngine/Vendor/ImGui
+	url = https://github.com/zohebhynus/imgui
