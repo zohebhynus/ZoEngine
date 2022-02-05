@@ -10,6 +10,12 @@
     <Filter Include="ZoEngine\Platforms">
       <UniqueIdentifier>{2B305A4E-1714-1BA4-8074-15F76C770526}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ZoEngine\ImGui">
+      <UniqueIdentifier>{e2d2d140-6304-459e-b822-bde1fd20887e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ZoEngine\Platforms\OpenGL">
+      <UniqueIdentifier>{4ea388b3-b3c9-43e1-ba41-339da0e4dc8d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\ZoEngine.h" />
@@ -43,13 +49,19 @@
     <ClInclude Include="Source\ZoEngine\Log.h">
       <Filter>ZoEngine</Filter>
     </ClInclude>
-    <ClInclude Include="Source\ZoEngine\Platforms\WindowsWindow.h">
-      <Filter>ZoEngine\Platforms</Filter>
-    </ClInclude>
     <ClInclude Include="Source\ZoEngine\Window.h">
       <Filter>ZoEngine</Filter>
     </ClInclude>
     <ClInclude Include="Source\pch.h" />
+    <ClInclude Include="Source\ZoEngine\ImGui\ImGuiLayer.h">
+      <Filter>ZoEngine\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ZoEngine\Platforms\Windows\WindowsWindow.h">
+      <Filter>ZoEngine\Platforms</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ZoEngine\Platforms\OpenGL\ImGuiOpenGLRenderer.h">
+      <Filter>ZoEngine\Platforms\OpenGL</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\ZoEngine\Application.cpp">
@@ -64,9 +76,15 @@
     <ClCompile Include="Source\ZoEngine\Log.cpp">
       <Filter>ZoEngine</Filter>
     </ClCompile>
-    <ClCompile Include="Source\ZoEngine\Platforms\WindowsWindow.cpp">
+    <ClCompile Include="Source\pch.cpp" />
+    <ClCompile Include="Source\ZoEngine\ImGui\ImGuiLayer.cpp">
+      <Filter>ZoEngine\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ZoEngine\Platforms\Windows\WindowsWindow.cpp">
       <Filter>ZoEngine\Platforms</Filter>
     </ClCompile>
-    <ClCompile Include="Source\pch.cpp" />
+    <ClCompile Include="Source\ZoEngine\Platforms\OpenGL\ImGuiOpenGLRenderer.cpp">
+      <Filter>ZoEngine\Platforms\OpenGL</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

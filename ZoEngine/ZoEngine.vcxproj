@@ -80,7 +80,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>ZO_PLATFORM_WINDOWS;ZO_BUILD_DLL;GLFW_INCLUDE_NONE;ZO_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Source;Vendor\spdlog\include;Vendor\GLFW\include;Vendor\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Source;Vendor\spdlog\include;Vendor\GLFW\include;Vendor\Glad\include;Vendor\ImGui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -103,7 +103,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>ZO_PLATFORM_WINDOWS;ZO_BUILD_DLL;GLFW_INCLUDE_NONE;ZO_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Source;Vendor\spdlog\include;Vendor\GLFW\include;Vendor\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Source;Vendor\spdlog\include;Vendor\GLFW\include;Vendor\Glad\include;Vendor\ImGui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -130,7 +130,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>ZO_PLATFORM_WINDOWS;ZO_BUILD_DLL;GLFW_INCLUDE_NONE;ZO_FINALRELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Source;Vendor\spdlog\include;Vendor\GLFW\include;Vendor\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Source;Vendor\spdlog\include;Vendor\GLFW\include;Vendor\Glad\include;Vendor\ImGui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -152,6 +152,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Source\ZoEngine\ImGui\ImGuiLayer.h" />
     <ClInclude Include="Source\ZoEngine.h" />
     <ClInclude Include="Source\ZoEngine\Application.h" />
     <ClInclude Include="Source\ZoEngine\Core.h" />
@@ -163,16 +164,19 @@
     <ClInclude Include="Source\ZoEngine\Layer.h" />
     <ClInclude Include="Source\ZoEngine\LayerStack.h" />
     <ClInclude Include="Source\ZoEngine\Log.h" />
-    <ClInclude Include="Source\ZoEngine\Platforms\WindowsWindow.h" />
+    <ClInclude Include="Source\ZoEngine\Platforms\OpenGL\ImGuiOpenGLRenderer.h" />
+    <ClInclude Include="Source\ZoEngine\Platforms\Windows\WindowsWindow.h" />
     <ClInclude Include="Source\ZoEngine\Window.h" />
     <ClInclude Include="Source\pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\ZoEngine\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="Source\ZoEngine\Application.cpp" />
     <ClCompile Include="Source\ZoEngine\Layer.cpp" />
     <ClCompile Include="Source\ZoEngine\LayerStack.cpp" />
     <ClCompile Include="Source\ZoEngine\Log.cpp" />
-    <ClCompile Include="Source\ZoEngine\Platforms\WindowsWindow.cpp" />
+    <ClCompile Include="Source\ZoEngine\Platforms\OpenGL\ImGuiOpenGLRenderer.cpp" />
+    <ClCompile Include="Source\ZoEngine\Platforms\Windows\WindowsWindow.cpp" />
     <ClCompile Include="Source\pch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
@@ -181,8 +185,11 @@
     <ProjectReference Include="Vendor\GLFW\GLFW.vcxproj">
       <Project>{154B857C-0182-860D-AA6E-6C109684020F}</Project>
     </ProjectReference>
-    <ProjectReference Include="Vendor\GLAD\Glad.vcxproj">
+    <ProjectReference Include="Vendor\Glad\Glad.vcxproj">
       <Project>{BDD6857C-A90D-870D-52FA-6C103E10030F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="Vendor\ImGui\ImGui.vcxproj">
+      <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

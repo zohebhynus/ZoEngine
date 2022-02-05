@@ -90,7 +90,7 @@ namespace ZoEngine
 
 				case GLFW_REPEAT:
 				{
-					KeyReleasedEvent event(key);
+					KeyPressedEvent event(key, 1);
 					data.EventCallback(event);
 					break;
 				}
@@ -98,11 +98,20 @@ namespace ZoEngine
 				case GLFW_RELEASE:
 				{
 					//TO DO : Extract re[eat count from glfw. Repeat set to 1 for now
-					KeyPressedEvent event(key, 1);
+					KeyReleasedEvent event(key);
 					data.EventCallback(event);
 					break;
 				}
 				}
+			});
+
+		//Key Typed
+		glfwSetCharCallback(m_Window, [](GLFWwindow* window, unsigned int keycode)
+			{
+				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+
+				KeyTypedEvent event(keycode);
+				data.EventCallback(event);
 			});
 
 		//Mouse Button

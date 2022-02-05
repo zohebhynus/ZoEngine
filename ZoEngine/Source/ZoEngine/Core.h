@@ -20,3 +20,6 @@
 
 //For bit field
 #define BIT(x) (1 << x)
+
+//Binding function
+#define BIND_EVENT_FUNC(functionName)			std::bind(&functionName, this, std::placeholders::_1)

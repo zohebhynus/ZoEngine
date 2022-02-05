@@ -8,8 +8,13 @@
 
 namespace ZoEngine
 {
+	Application* Application::s_Instance = nullptr;
+
 	Application::Application()
 	{
+		ZO_CORE_ASSERT(!s_Instance, "Application already exists.");
+		s_Instance = this;
+
 		m_Window = std::unique_ptr<Window>(Window::Create());
 		//TODO : Make into Macro
 		m_Window->SetEventCallback(std::bind(&Application::OnEvent, this, std::placeholders::_1));
@@ -55,11 +60,23 @@ namespace ZoEngine
 	void Application::PushLayer(Layer* layer)
 	{
 		m_LayerStack.PushLayer(layer);
+		layer->OnAttach();
 	}
 
 	void Application::PopLayer(Layer* layer)
 	{
 		m_LayerStack.PopLayer(layer);
+	}
+
+	void Application::PushOverlay(Layer* layer)
+	{
+		m_LayerStack.PushOverlay(layer);
+		layer->OnAttach();
+	}
+
+	void Application::PopOverlay(Layer* layer)
+	{
+		m_LayerStack.PopOverlay(layer);
 	}
 
 	bool Application::OnWindowClose(WindowClosesEvent& event)

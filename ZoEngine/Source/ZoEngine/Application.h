@@ -21,6 +21,12 @@ namespace ZoEngine{
 
 		void PushLayer(Layer* layer);
 		void PopLayer(Layer* layer);
+
+		void PushOverlay(Layer* layer);
+		void PopOverlay(Layer* layer);
+
+		inline static Application& Get() { return *s_Instance; }
+		inline Window& GetWindow() { return *m_Window; }
 	private:
 		bool OnWindowClose(WindowClosesEvent& event);
 
@@ -29,6 +35,8 @@ namespace ZoEngine{
 		LayerStack m_LayerStack;
 
 		bool m_IsRunning = true;
+
+		static Application* s_Instance;
 
 		
 	};

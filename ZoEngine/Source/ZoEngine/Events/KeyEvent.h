@@ -60,4 +60,22 @@ namespace ZoEngine
 
 		EVENT_CLASS_TYPE(KeyReleased)
 	};
+
+	//key release event class
+	class ZOENGINE_API KeyTypedEvent : public KeyEvent
+	{
+	public:
+		KeyTypedEvent(int keyCode) : KeyEvent(keyCode)
+		{
+		}
+
+		std::string ToString() const override
+		{
+			std::stringstream ss;
+			ss << "Key Typed Event : " << m_KeyCode;
+			return ss.str();
+		}
+
+		EVENT_CLASS_TYPE(KeyTyped)
+	};
 }

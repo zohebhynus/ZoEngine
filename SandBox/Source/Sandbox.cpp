@@ -10,7 +10,7 @@ public:
 
 	void OnUpdate() override
 	{
-		ZO_INFO("TestLayer::OnUpdate");
+		//ZO_INFO("TestLayer::OnUpdate");
 	}
 
 	void OnEvent(ZoEngine::Event& event) override
@@ -25,6 +25,8 @@ public:
 	Sandbox()
 	{
 		PushLayer(new TestLayer());
+		
+		PushOverlay(new ZoEngine::ImGuiLayer());
 	}
 
 	~Sandbox()
