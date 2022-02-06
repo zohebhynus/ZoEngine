@@ -10,12 +10,15 @@ public:
 
 	void OnUpdate() override
 	{
-		//ZO_INFO("TestLayer::OnUpdate");
 	}
 
 	void OnEvent(ZoEngine::Event& event) override
 	{
-		ZO_TRACE(event);
+		if (event.GetEventType() == ZoEngine::EventType::KeyPressed)
+		{
+			ZoEngine::KeyPressedEvent& e = (ZoEngine::KeyPressedEvent&) event;
+			ZO_TRACE("Key Pressed : {0}", (char)e.GetKeyCode());
+		}
 	}
 };
 

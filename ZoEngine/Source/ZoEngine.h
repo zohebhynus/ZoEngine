@@ -7,6 +7,10 @@
 
 #include "ZoEngine/ImGui/ImGuiLayer.h"
 
+#include "ZoEngine/Input.h"
+#include "ZoEngine/KeyCodes.h"
+#include "ZoEngine/MouseButtonCodes.h"
+
 // ENTRY POINT
 #include "ZoEngine/EntryPoint.h"
 

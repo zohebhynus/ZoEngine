@@ -71,6 +71,8 @@
     <ClInclude Include="Source\ZoEngine\Platforms\Windows\WindowsInput.h">
       <Filter>ZoEngine\Platforms\Windows</Filter>
     </ClInclude>
+    <ClInclude Include="Source\ZoEngine\KeyCodes.h" />
+    <ClInclude Include="Source\ZoEngine\MouseButtonCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\ZoEngine\Application.cpp">
