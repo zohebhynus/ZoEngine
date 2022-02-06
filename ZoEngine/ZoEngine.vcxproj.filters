@@ -46,6 +46,12 @@
     <ClInclude Include="Source\ZoEngine\ImGui\ImGuiLayer.h">
       <Filter>ZoEngine\ImGui</Filter>
     </ClInclude>
+    <ClInclude Include="Source\ZoEngine\Input.h">
+      <Filter>ZoEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ZoEngine\KeyCodes.h">
+      <Filter>ZoEngine</Filter>
+    </ClInclude>
     <ClInclude Include="Source\ZoEngine\Layer.h">
       <Filter>ZoEngine</Filter>
     </ClInclude>
@@ -55,8 +61,14 @@
     <ClInclude Include="Source\ZoEngine\Log.h">
       <Filter>ZoEngine</Filter>
     </ClInclude>
+    <ClInclude Include="Source\ZoEngine\MouseButtonCodes.h">
+      <Filter>ZoEngine</Filter>
+    </ClInclude>
     <ClInclude Include="Source\ZoEngine\Platforms\OpenGL\ImGuiOpenGLRenderer.h">
       <Filter>ZoEngine\Platforms\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ZoEngine\Platforms\Windows\WindowsInput.h">
+      <Filter>ZoEngine\Platforms\Windows</Filter>
     </ClInclude>
     <ClInclude Include="Source\ZoEngine\Platforms\Windows\WindowsWindow.h">
       <Filter>ZoEngine\Platforms\Windows</Filter>
@@ -65,14 +77,6 @@
       <Filter>ZoEngine</Filter>
     </ClInclude>
     <ClInclude Include="Source\pch.h" />
-    <ClInclude Include="Source\ZoEngine\Input.h">
-      <Filter>ZoEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\ZoEngine\Platforms\Windows\WindowsInput.h">
-      <Filter>ZoEngine\Platforms\Windows</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\ZoEngine\KeyCodes.h" />
-    <ClInclude Include="Source\ZoEngine\MouseButtonCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\ZoEngine\Application.cpp">
@@ -93,12 +97,12 @@
     <ClCompile Include="Source\ZoEngine\Platforms\OpenGL\ImGuiOpenGLRenderer.cpp">
       <Filter>ZoEngine\Platforms\OpenGL</Filter>
     </ClCompile>
+    <ClCompile Include="Source\ZoEngine\Platforms\Windows\WindowsInput.cpp">
+      <Filter>ZoEngine\Platforms\Windows</Filter>
+    </ClCompile>
     <ClCompile Include="Source\ZoEngine\Platforms\Windows\WindowsWindow.cpp">
       <Filter>ZoEngine\Platforms\Windows</Filter>
     </ClCompile>
     <ClCompile Include="Source\pch.cpp" />
-    <ClCompile Include="Source\ZoEngine\Platforms\Windows\WindowsInput.cpp">
-      <Filter>ZoEngine\Platforms\Windows</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>

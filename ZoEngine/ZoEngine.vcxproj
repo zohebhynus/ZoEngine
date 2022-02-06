@@ -149,7 +149,6 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Source\ZoEngine\Input.h" />
     <ClInclude Include="Source\ZoEngine.h" />
     <ClInclude Include="Source\ZoEngine\Application.h" />
     <ClInclude Include="Source\ZoEngine\Core.h" />
@@ -159,6 +158,7 @@
     <ClInclude Include="Source\ZoEngine\Events\KeyEvent.h" />
     <ClInclude Include="Source\ZoEngine\Events\MouseEvent.h" />
     <ClInclude Include="Source\ZoEngine\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="Source\ZoEngine\Input.h" />
     <ClInclude Include="Source\ZoEngine\KeyCodes.h" />
     <ClInclude Include="Source\ZoEngine\Layer.h" />
     <ClInclude Include="Source\ZoEngine\LayerStack.h" />
