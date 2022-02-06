@@ -16,6 +16,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "ZoEngine/Vendor/GLFW/include"
 IncludeDir["Glad"] = "ZoEngine/Vendor/Glad/include"
 IncludeDir["ImGui"] = "ZoEngine/Vendor/ImGui"
+IncludeDir["glm"] = "ZoEngine/Vendor/glm"
 
 group "Dependencies"
 	include "ZoEngine/Vendor/GLFW"
@@ -38,7 +39,9 @@ project "ZoEngine"
 	files
 	{
 		"%{prj.name}/Source/**.h",
-		"%{prj.name}/Source/**.cpp"
+		"%{prj.name}/Source/**.cpp",
+		"%{prj.name}/Vendor/glm/glm/**.hpp",
+		"%{prj.name}/Vendor/glm/glm/**.inl"
 	}
 	
 	includedirs
@@ -47,7 +50,8 @@ project "ZoEngine"
 		"%{prj.name}/Vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
-		"%{IncludeDir.ImGui}"
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.glm}"
 	}
 
 	links
@@ -110,7 +114,8 @@ project "Sandbox"
 	includedirs
 	{
 		"ZoEngine/Vendor/spdlog/include",
-		"ZoEngine/Source"
+		"ZoEngine/Source",
+		"%{IncludeDir.glm}"
 	}
 	
 	links
