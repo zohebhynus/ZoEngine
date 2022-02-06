@@ -5,6 +5,8 @@
 #include "Events/ApplicationEvent.h"
 #include "ZoEngine/Log.h"
 #include "glad/glad.h"
+#include "ZoEngine/Input.h"
+#include "GLFW/glfw3.h"
 
 namespace ZoEngine
 {
@@ -37,6 +39,25 @@ namespace ZoEngine
 			{
 				layer->OnUpdate();
 			}
+
+			//iNPUT CLass test
+			//auto [x, y] = Input::GetMousePosition();
+			//auto xpos = Input::GetMouseX();
+			//auto ypos = Input::GetMouseY();
+			//ZO_CORE_TRACE("Mouse Positions : ({0},{1})", x, y);
+			//ZO_CORE_TRACE("xPos : {0}", xpos);
+			//ZO_CORE_TRACE("yPos : {0}", ypos);
+
+			//if (Input::IsKeyPressed(GLFW_KEY_A))
+			//{
+				//ZO_CORE_TRACE("A Key was pressed.");
+			//}
+
+			//if (Input::IsMouseButtonPressed(GLFW_MOUSE_BUTTON_1))
+			//{
+			//	ZO_CORE_TRACE("Left Click was Pressed.");
+			//}
+
 
 			m_Window->OnUpdate();
 		}

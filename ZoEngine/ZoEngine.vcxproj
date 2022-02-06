@@ -93,7 +93,7 @@
       <ImportLibrary>..\bin\Debug-windows-x86_64\ZoEngine\ZoEngine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Debug-windows-x86_64\ZoEngine\ZoEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\ZoEngine\ZoEngine.dll ..\bin\Debug-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\ZoEngine\ZoEngine.dll ..\bin\Debug-windows-x86_64\Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Debug-windows-x86_64\ZoEngine\ZoEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\ZoEngine\ZoEngine.dll "..\bin\Debug-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\ZoEngine\ZoEngine.dll "..\bin\Debug-windows-x86_64\Sandbox\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -119,7 +119,7 @@
       <ImportLibrary>..\bin\Release-windows-x86_64\ZoEngine\ZoEngine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Release-windows-x86_64\ZoEngine\ZoEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\ZoEngine\ZoEngine.dll ..\bin\Release-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\ZoEngine\ZoEngine.dll ..\bin\Release-windows-x86_64\Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Release-windows-x86_64\ZoEngine\ZoEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\ZoEngine\ZoEngine.dll "..\bin\Release-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\ZoEngine\ZoEngine.dll "..\bin\Release-windows-x86_64\Sandbox\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='FinalRelease|x64'">
@@ -145,10 +145,11 @@
       <ImportLibrary>..\bin\FinalRelease-windows-x86_64\ZoEngine\ZoEngine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\FinalRelease-windows-x86_64\ZoEngine\ZoEngine.dll\ (xcopy /Q /E /Y /I ..\bin\FinalRelease-windows-x86_64\ZoEngine\ZoEngine.dll ..\bin\FinalRelease-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\FinalRelease-windows-x86_64\ZoEngine\ZoEngine.dll ..\bin\FinalRelease-windows-x86_64\Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\FinalRelease-windows-x86_64\ZoEngine\ZoEngine.dll\ (xcopy /Q /E /Y /I ..\bin\FinalRelease-windows-x86_64\ZoEngine\ZoEngine.dll "..\bin\FinalRelease-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\FinalRelease-windows-x86_64\ZoEngine\ZoEngine.dll "..\bin\FinalRelease-windows-x86_64\Sandbox\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Source\ZoEngine\Input.h" />
     <ClInclude Include="Source\ZoEngine.h" />
     <ClInclude Include="Source\ZoEngine\Application.h" />
     <ClInclude Include="Source\ZoEngine\Core.h" />
@@ -162,6 +163,7 @@
     <ClInclude Include="Source\ZoEngine\LayerStack.h" />
     <ClInclude Include="Source\ZoEngine\Log.h" />
     <ClInclude Include="Source\ZoEngine\Platforms\OpenGL\ImGuiOpenGLRenderer.h" />
+    <ClInclude Include="Source\ZoEngine\Platforms\Windows\WindowsInput.h" />
     <ClInclude Include="Source\ZoEngine\Platforms\Windows\WindowsWindow.h" />
     <ClInclude Include="Source\ZoEngine\Window.h" />
     <ClInclude Include="Source\pch.h" />
@@ -173,6 +175,7 @@
     <ClCompile Include="Source\ZoEngine\LayerStack.cpp" />
     <ClCompile Include="Source\ZoEngine\Log.cpp" />
     <ClCompile Include="Source\ZoEngine\Platforms\OpenGL\ImGuiOpenGLRenderer.cpp" />
+    <ClCompile Include="Source\ZoEngine\Platforms\Windows\WindowsInput.cpp" />
     <ClCompile Include="Source\ZoEngine\Platforms\Windows\WindowsWindow.cpp" />
     <ClCompile Include="Source\pch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>

@@ -65,6 +65,12 @@
       <Filter>ZoEngine</Filter>
     </ClInclude>
     <ClInclude Include="Source\pch.h" />
+    <ClInclude Include="Source\ZoEngine\Input.h">
+      <Filter>ZoEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ZoEngine\Platforms\Windows\WindowsInput.h">
+      <Filter>ZoEngine\Platforms\Windows</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\ZoEngine\Application.cpp">
@@ -89,5 +95,8 @@
       <Filter>ZoEngine\Platforms\Windows</Filter>
     </ClCompile>
     <ClCompile Include="Source\pch.cpp" />
+    <ClCompile Include="Source\ZoEngine\Platforms\Windows\WindowsInput.cpp">
+      <Filter>ZoEngine\Platforms\Windows</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -17,9 +17,11 @@ IncludeDir["GLFW"] = "ZoEngine/Vendor/GLFW/include"
 IncludeDir["Glad"] = "ZoEngine/Vendor/Glad/include"
 IncludeDir["ImGui"] = "ZoEngine/Vendor/ImGui"
 
-include "ZoEngine/Vendor/GLFW"
-include "ZoEngine/Vendor/Glad"
-include "ZoEngine/Vendor/ImGui"
+group "Dependencies"
+	include "ZoEngine/Vendor/GLFW"
+	include "ZoEngine/Vendor/Glad"
+	include "ZoEngine/Vendor/ImGui"
+group ""
 
 project "ZoEngine"
 	location "ZoEngine"
@@ -69,7 +71,7 @@ project "ZoEngine"
 		
 		postbuildcommands
 		{
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
 		}
 	
 	filter "configurations:Debug"

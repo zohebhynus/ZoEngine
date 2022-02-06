@@ -191,7 +191,4 @@ namespace ZoEngine
 	{
 		return m_WindowData.VSync;
 	}
-
-
-
 }

@@ -21,6 +21,8 @@ namespace ZoEngine
 		void SetVSync(bool enabled) override;
 		bool IsVSyncActive() const override;
 
+		inline virtual void* GetNativeWindow() const { return m_Window; }
+
 	protected:
 		virtual void Init(const WindowProps& props);
 		virtual void Shutdown();
