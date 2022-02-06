@@ -7,3 +7,6 @@
 [submodule "ZoEngine/Vendor/ImGui"]
 	path = ZoEngine/Vendor/ImGui
 	url = https://github.com/zohebhynus/imgui
+[submodule "ZoEngine/Vendor/glm"]
+	path = ZoEngine/Vendor/glm
+	url = https://github.com/g-truc/glm
