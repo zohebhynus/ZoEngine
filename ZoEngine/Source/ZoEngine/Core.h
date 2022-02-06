@@ -10,6 +10,11 @@
 	#error ZoEngine only supports Windows right now!
 #endif // ZO_PLATFORM_WINDOWS
 
+#ifdef ZO_DEBUG
+	#define ZO_ENABLE_ASSERT
+#endif // ZO_DEBUG
+
+
 #ifdef ZO_ENABLE_ASSERT
 	#define ZO_CORE_ASSERT(x, ...)       {if(!x){ZO_CORE_ERROR("Error : {0}",__VA_ARGS__); __debugbreak();} }
 	#define ZO_ASSERT(x, ...)            {if(!x){ZO_ERROR("Error : {0}",__VA_ARGS__); __debugbreak();} }

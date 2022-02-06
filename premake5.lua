@@ -1,5 +1,6 @@
 workspace "ZoEngine"
 	architecture "x64"
+	startproject "Sandbox"
 	
 	configurations
 	{
@@ -24,6 +25,7 @@ project "ZoEngine"
 	location "ZoEngine"
 	kind "SharedLib"
 	language "C++"
+	staticruntime "off"
 	
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -56,7 +58,6 @@ project "ZoEngine"
 	
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 		
 		defines
@@ -73,17 +74,17 @@ project "ZoEngine"
 	
 	filter "configurations:Debug"
 		defines "ZO_DEBUG"
-		buildoptions "/MDd"
+		runtime "Debug"
 		symbols "On"
 		
 	filter "configurations:Release"
 		defines "ZO_RELEASE"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 		
 	filter "configurations:FinalRelease"
 		defines "ZO_FINALRELEASE"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 
 
@@ -93,6 +94,7 @@ project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
+	staticruntime "off"
 	
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -116,7 +118,6 @@ project "Sandbox"
 	
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 		
 		defines
@@ -126,17 +127,17 @@ project "Sandbox"
 	
 	filter "configurations:Debug"
 		defines "ZO_DEBUG"
-		buildoptions "/MDd"
+		runtime "Debug"
 		symbols "On"
 		
 	filter "configurations:Release"
 		defines "ZO_RELEASE"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 		
 	filter "configurations:FinalRelease"
 		defines "ZO_FINALRELEASE"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 	
 	
