@@ -13,24 +13,15 @@ namespace ZoEngine
 		ImGuiLayer();
 		~ImGuiLayer();
 
-		void OnAttach();
-		void OnDetach();
+		virtual void OnAttach() override;
+		virtual void OnDetach() override;
+		
+		virtual void OnImGuiRender() override;
 
-		void OnUpdate();
-		void OnEvent(Event& event);
+		void Begin();
+		void End();
 
 	private:
-
-		bool OnKeyPressedEvent(KeyPressedEvent& event);
-		bool OnKeyReleasedEvent(KeyReleasedEvent& event);
-		bool OnKeyTypedEvent(KeyTypedEvent& event);
-
-		bool OnMouseMoveEvent(MouseMovedEvent& event);
-		bool OnMouseScrolledEvent(MouseScrolledEvent& event);
-		bool OnMouseButtonPressedEvent(MouseButtonPresseddEvent& event);
-		bool OnMouseButtonReleasedEvent(MouseButtonReleasedEvent& event);
-
-		bool OnWindowResizeEvent(WindowResizeEvent& event);
 
 		float m_Time = 0.0f;
 	};

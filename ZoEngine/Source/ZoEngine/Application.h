@@ -7,6 +7,7 @@
 
 #include "ZoEngine/Layer.h"
 #include "ZoEngine/LayerStack.h"
+#include "ZoEngine/ImGui/ImGuiLayer.h"
 
 namespace ZoEngine{
 
@@ -31,6 +32,7 @@ namespace ZoEngine{
 		bool OnWindowClose(WindowClosesEvent& event);
 
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		
 		LayerStack m_LayerStack;
 

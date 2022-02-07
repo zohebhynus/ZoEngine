@@ -16,6 +16,7 @@ namespace ZoEngine
 
 		unsigned int GetWidth() const override { return m_WindowData.Width; }
 		unsigned int GetHeight() const override { return m_WindowData.Height; }
+		float GetHighDPIScalingFactor() const override { return m_HighDPIScaleFactor; }
 
 		inline void SetEventCallback(const EventCallbackFunction& callback) override { m_WindowData.EventCallback = callback; }
 		void SetVSync(bool enabled) override;
@@ -29,6 +30,7 @@ namespace ZoEngine
 
 	private:
 		GLFWwindow* m_Window;
+		float m_HighDPIScaleFactor = 1.0;
 
 		struct WindowData
 		{

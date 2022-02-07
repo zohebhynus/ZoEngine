@@ -45,6 +45,16 @@ namespace ZoEngine
 		m_Window = glfwCreateWindow(m_WindowData.Width, m_WindowData.Height, m_WindowData.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
 
+		//Get Monitor DPI scale value
+		GLFWmonitor* monitor = glfwGetPrimaryMonitor();
+		float xScale;
+		float yScale;
+		glfwGetMonitorContentScale(monitor, &xScale, &yScale);
+		if (xScale > 0 || yScale > 0)
+		{
+			m_HighDPIScaleFactor = xScale;
+		}
+
 		//Glad Initialization
 		int result = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 		ZO_CORE_ASSERT(result, "Glad Failed to Initialize.")

@@ -115,6 +115,7 @@ project "Sandbox"
 	{
 		"ZoEngine/Vendor/spdlog/include",
 		"ZoEngine/Source",
+		"ZoEngine/Vendor",
 		"%{IncludeDir.glm}"
 	}
 	

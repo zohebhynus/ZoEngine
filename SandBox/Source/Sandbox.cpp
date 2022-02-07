@@ -1,5 +1,7 @@
 #include <ZoEngine.h>
 
+#include "ImGui/imgui.h"
+
 class TestLayer : public ZoEngine::Layer
 {
 public:
@@ -10,6 +12,13 @@ public:
 
 	void OnUpdate() override
 	{
+	}
+
+	void OnImGuiRender()
+	{
+		ImGui::Begin("Test");
+		ImGui::Text("Test Window");
+		ImGui::End();
 	}
 
 	void OnEvent(ZoEngine::Event& event) override
@@ -28,8 +37,6 @@ public:
 	Sandbox()
 	{
 		PushLayer(new TestLayer());
-		
-		PushOverlay(new ZoEngine::ImGuiLayer());
 	}
 
 	~Sandbox()

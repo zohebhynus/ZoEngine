@@ -164,7 +164,6 @@
     <ClInclude Include="Source\ZoEngine\LayerStack.h" />
     <ClInclude Include="Source\ZoEngine\Log.h" />
     <ClInclude Include="Source\ZoEngine\MouseButtonCodes.h" />
-    <ClInclude Include="Source\ZoEngine\Platforms\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="Source\ZoEngine\Platforms\Windows\WindowsInput.h" />
     <ClInclude Include="Source\ZoEngine\Platforms\Windows\WindowsWindow.h" />
     <ClInclude Include="Source\ZoEngine\Window.h" />
@@ -587,11 +586,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\ZoEngine\Application.cpp" />
+    <ClCompile Include="Source\ZoEngine\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="Source\ZoEngine\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="Source\ZoEngine\Layer.cpp" />
     <ClCompile Include="Source\ZoEngine\LayerStack.cpp" />
     <ClCompile Include="Source\ZoEngine\Log.cpp" />
-    <ClCompile Include="Source\ZoEngine\Platforms\OpenGL\ImGuiOpenGLRenderer.cpp" />
     <ClCompile Include="Source\ZoEngine\Platforms\Windows\WindowsInput.cpp" />
     <ClCompile Include="Source\ZoEngine\Platforms\Windows\WindowsWindow.cpp" />
     <ClCompile Include="Source\pch.cpp">

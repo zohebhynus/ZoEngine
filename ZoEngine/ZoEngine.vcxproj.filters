@@ -16,9 +16,6 @@
     <Filter Include="Source\ZoEngine\Platforms">
       <UniqueIdentifier>{6B41FD23-D703-31AE-20B4-BF3A8CB5098C}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\ZoEngine\Platforms\OpenGL">
-      <UniqueIdentifier>{3FC44A7E-2B15-36C0-5479-24824029C929}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source\ZoEngine\Platforms\Windows">
       <UniqueIdentifier>{A526BF9F-1195-141F-5A7E-CF1EC62B0ABB}</UniqueIdentifier>
     </Filter>
@@ -89,9 +86,6 @@
     </ClInclude>
     <ClInclude Include="Source\ZoEngine\MouseButtonCodes.h">
       <Filter>Source\ZoEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\ZoEngine\Platforms\OpenGL\ImGuiOpenGLRenderer.h">
-      <Filter>Source\ZoEngine\Platforms\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="Source\ZoEngine\Platforms\Windows\WindowsInput.h">
       <Filter>Source\ZoEngine\Platforms\Windows</Filter>
@@ -1355,6 +1349,9 @@
     <ClCompile Include="Source\ZoEngine\Application.cpp">
       <Filter>Source\ZoEngine</Filter>
     </ClCompile>
+    <ClCompile Include="Source\ZoEngine\ImGui\ImGuiBuild.cpp">
+      <Filter>Source\ZoEngine\ImGui</Filter>
+    </ClCompile>
     <ClCompile Include="Source\ZoEngine\ImGui\ImGuiLayer.cpp">
       <Filter>Source\ZoEngine\ImGui</Filter>
     </ClCompile>
@@ -1366,9 +1363,6 @@
     </ClCompile>
     <ClCompile Include="Source\ZoEngine\Log.cpp">
       <Filter>Source\ZoEngine</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\ZoEngine\Platforms\OpenGL\ImGuiOpenGLRenderer.cpp">
-      <Filter>Source\ZoEngine\Platforms\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="Source\ZoEngine\Platforms\Windows\WindowsInput.cpp">
       <Filter>Source\ZoEngine\Platforms\Windows</Filter>

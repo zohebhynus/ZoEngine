@@ -13,7 +13,7 @@ namespace ZoEngine
 		unsigned int Width;
 		unsigned int Height;
 
-		WindowProps(const std::string& title = "ZoEngine", unsigned int width = 1920, unsigned int height = 1080) :
+		WindowProps(const std::string& title = "ZoEngine", unsigned int width = 2560, unsigned int height = 1440) :
 			Title(title), Width(width), Height(height)
 		{
 
@@ -33,6 +33,7 @@ namespace ZoEngine
 
 		virtual unsigned int GetWidth() const = 0;
 		virtual unsigned int GetHeight() const = 0;
+		virtual float GetHighDPIScalingFactor() const = 0;
 
 		virtual void SetEventCallback(const EventCallbackFunction& callback) = 0;
 		virtual void SetVSync(bool enabled) = 0;
