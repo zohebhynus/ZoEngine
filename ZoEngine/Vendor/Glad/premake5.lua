@@ -21,9 +21,9 @@ project "Glad"
         systemversion "latest"
 
     filter "configurations:Debug"
-    runtime "Debug"
-    symbols "on"
+        runtime "Debug"
+        symbols "on"
 
     filter "configurations:Release"
-    runtime "Release"
-    symbols "on"
+        runtime "Release"
+        symbols "on"
