@@ -1,11 +1,15 @@
 #pragma once
 
 #ifdef ZO_PLATFORM_WINDOWS
+#if ZO_DYNAMIC_LINK
 	#ifdef ZO_BUILD_DLL
 		#define ZOENGINE_API __declspec(dllexport)
 	#else
 		#define ZOENGINE_API __declspec(dllimport)
 	#endif // ZO_BUILD_DLL
+#else
+	#define ZOENGINE_API
+#endif //ZO_DYNAMIC_LINK
 #else
 	#error ZoEngine only supports Windows right now!
 #endif // ZO_PLATFORM_WINDOWS
