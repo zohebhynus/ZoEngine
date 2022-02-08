@@ -10,11 +10,17 @@
     <Filter Include="Source\ZoEngine\Events">
       <UniqueIdentifier>{88B8AED5-74B2-D727-5D1F-6E3849B83D94}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\ZoEngine\Graphics">
+      <UniqueIdentifier>{E48DA297-D0B2-F117-F9FD-D6A7E581F035}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source\ZoEngine\ImGui">
       <UniqueIdentifier>{4E7D4016-BAE9-FB10-83DD-936EEF081E79}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\ZoEngine\Platforms">
       <UniqueIdentifier>{6B41FD23-D703-31AE-20B4-BF3A8CB5098C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\ZoEngine\Platforms\OpenGL">
+      <UniqueIdentifier>{3FC44A7E-2B15-36C0-5479-24824029C929}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source\ZoEngine\Platforms\Windows">
       <UniqueIdentifier>{A526BF9F-1195-141F-5A7E-CF1EC62B0ABB}</UniqueIdentifier>
@@ -66,6 +72,9 @@
     <ClInclude Include="Source\ZoEngine\Events\MouseEvent.h">
       <Filter>Source\ZoEngine\Events</Filter>
     </ClInclude>
+    <ClInclude Include="Source\ZoEngine\Graphics\GraphicsContext.h">
+      <Filter>Source\ZoEngine\Graphics</Filter>
+    </ClInclude>
     <ClInclude Include="Source\ZoEngine\ImGui\ImGuiLayer.h">
       <Filter>Source\ZoEngine\ImGui</Filter>
     </ClInclude>
@@ -86,6 +95,9 @@
     </ClInclude>
     <ClInclude Include="Source\ZoEngine\MouseButtonCodes.h">
       <Filter>Source\ZoEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ZoEngine\Platforms\OpenGL\OpenGLContext.h">
+      <Filter>Source\ZoEngine\Platforms\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="Source\ZoEngine\Platforms\Windows\WindowsInput.h">
       <Filter>Source\ZoEngine\Platforms\Windows</Filter>
@@ -1344,8 +1356,6 @@
     <ClInclude Include="Vendor\glm\glm\vector_relational.hpp">
       <Filter>Vendor\glm\glm</Filter>
     </ClInclude>
-    <ClInclude Include="Source\ZoEngine\Platforms\OpenGL\OpenGLContext.h" />
-    <ClInclude Include="Source\ZoEngine\Graphics\GraphicsContext.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\ZoEngine\Application.cpp">
@@ -1366,6 +1376,9 @@
     <ClCompile Include="Source\ZoEngine\Log.cpp">
       <Filter>Source\ZoEngine</Filter>
     </ClCompile>
+    <ClCompile Include="Source\ZoEngine\Platforms\OpenGL\OpenGLContext.cpp">
+      <Filter>Source\ZoEngine\Platforms\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="Source\ZoEngine\Platforms\Windows\WindowsInput.cpp">
       <Filter>Source\ZoEngine\Platforms\Windows</Filter>
     </ClCompile>
@@ -1375,6 +1388,5 @@
     <ClCompile Include="Source\pch.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Source\ZoEngine\Platforms\OpenGL\OpenGLContext.cpp" />
   </ItemGroup>
 </Project>
