@@ -1,8 +1,8 @@
 #pragma once
 #include "ZoEngine/Window.h"
+#include "ZoEngine/Graphics/GraphicsContext.h"
 
 #include "GLFW/glfw3.h"
-
 
 namespace ZoEngine
 {
@@ -30,6 +30,7 @@ namespace ZoEngine
 
 	private:
 		GLFWwindow* m_Window;
+		GraphicsContext* m_Context;
 		float m_HighDPIScaleFactor = 1.0;
 
 		struct WindowData

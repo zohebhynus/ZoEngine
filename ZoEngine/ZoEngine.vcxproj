@@ -148,6 +148,7 @@
     <ClInclude Include="Source\ZoEngine\Events\Event.h" />
     <ClInclude Include="Source\ZoEngine\Events\KeyEvent.h" />
     <ClInclude Include="Source\ZoEngine\Events\MouseEvent.h" />
+    <ClInclude Include="Source\ZoEngine\Graphics\GraphicsContext.h" />
     <ClInclude Include="Source\ZoEngine\ImGui\ImGuiLayer.h" />
     <ClInclude Include="Source\ZoEngine\Input.h" />
     <ClInclude Include="Source\ZoEngine\KeyCodes.h" />
@@ -155,6 +156,7 @@
     <ClInclude Include="Source\ZoEngine\LayerStack.h" />
     <ClInclude Include="Source\ZoEngine\Log.h" />
     <ClInclude Include="Source\ZoEngine\MouseButtonCodes.h" />
+    <ClInclude Include="Source\ZoEngine\Platforms\OpenGL\OpenGLContext.h" />
     <ClInclude Include="Source\ZoEngine\Platforms\Windows\WindowsInput.h" />
     <ClInclude Include="Source\ZoEngine\Platforms\Windows\WindowsWindow.h" />
     <ClInclude Include="Source\ZoEngine\Window.h" />
@@ -582,6 +584,7 @@
     <ClCompile Include="Source\ZoEngine\Layer.cpp" />
     <ClCompile Include="Source\ZoEngine\LayerStack.cpp" />
     <ClCompile Include="Source\ZoEngine\Log.cpp" />
+    <ClCompile Include="Source\ZoEngine\Platforms\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="Source\ZoEngine\Platforms\Windows\WindowsInput.cpp" />
     <ClCompile Include="Source\ZoEngine\Platforms\Windows\WindowsWindow.cpp" />
     <ClCompile Include="Source\pch.cpp">

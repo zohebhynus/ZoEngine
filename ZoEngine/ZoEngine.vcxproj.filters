@@ -1344,6 +1344,8 @@
     <ClInclude Include="Vendor\glm\glm\vector_relational.hpp">
       <Filter>Vendor\glm\glm</Filter>
     </ClInclude>
+    <ClInclude Include="Source\ZoEngine\Platforms\OpenGL\OpenGLContext.h" />
+    <ClInclude Include="Source\ZoEngine\Graphics\GraphicsContext.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\ZoEngine\Application.cpp">
@@ -1373,5 +1375,6 @@
     <ClCompile Include="Source\pch.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="Source\ZoEngine\Platforms\OpenGL\OpenGLContext.cpp" />
   </ItemGroup>
 </Project>

@@ -5,7 +5,8 @@
 #include "ZoEngine/Events/KeyEvent.h"
 #include "ZoEngine/Events/MouseEvent.h"
 
-#include "glad/glad.h"
+#include "ZoEngine/Platforms/OpenGL/OpenGLContext.h"
+
 
 namespace ZoEngine
 {
@@ -43,7 +44,8 @@ namespace ZoEngine
 		}
 
 		m_Window = glfwCreateWindow(m_WindowData.Width, m_WindowData.Height, m_WindowData.Title.c_str(), nullptr, nullptr);
-		glfwMakeContextCurrent(m_Window);
+		m_Context = new OpenGLContext(m_Window);
+		m_Context->Init();
 
 		//Get Monitor DPI scale value
 		GLFWmonitor* monitor = glfwGetPrimaryMonitor();
@@ -54,10 +56,6 @@ namespace ZoEngine
 		{
 			m_HighDPIScaleFactor = xScale;
 		}
-
-		//Glad Initialization
-		int result = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-		ZO_CORE_ASSERT(result, "Glad Failed to Initialize.")
 
 		glfwSetWindowUserPointer(m_Window, &m_WindowData);
 		SetVSync(true);
@@ -180,7 +178,7 @@ namespace ZoEngine
 	void WindowsWindow::OnUpdate()
 	{
 		glfwPollEvents();
-		glfwSwapBuffers(m_Window);
+		m_Context->SwapBuffers();
 	}
 
 	void WindowsWindow::SetVSync(bool enabled)
